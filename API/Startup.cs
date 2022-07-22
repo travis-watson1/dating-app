@@ -37,7 +37,7 @@ namespace API
             services.AddApplicationServices(_config);
             services.AddControllers();
             services.AddCors();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
             services.AddIdentityServices(_config);
         }
 
