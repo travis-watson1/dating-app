@@ -15,8 +15,8 @@ import { MembersService } from 'src/app/_services/members.service';
 })
 export class MemberDetailComponent implements OnInit {
   member: Member | undefined;
-  galleryOptions: NgxGalleryOptions[] = [];
-  galleryImages: NgxGalleryImage[] = [];
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
 
   constructor(
     private memberService: MembersService,
@@ -37,7 +37,6 @@ export class MemberDetailComponent implements OnInit {
       },
     ];
   }
-
   getImages() {
     if (!this.member) return [];
 
@@ -50,7 +49,6 @@ export class MemberDetailComponent implements OnInit {
         big: photo.url,
       });
     }
-
     return imageUrl;
   }
 
@@ -61,6 +59,7 @@ export class MemberDetailComponent implements OnInit {
       next: (member) => {
         this.member = member;
         this.galleryImages = this.getImages();
+        console.log(this.galleryImages);
       },
     });
   }
